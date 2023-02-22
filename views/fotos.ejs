@@ -11,11 +11,13 @@
             <div class="linea">
                 <form action="/fotos/masvotadas" method="post">
                     <input type="text" name="id" id="" value="<%= fotos[i].id %>" hidden>
+                    <i class="fa-regular fa-thumbs-up"></i>
                     <input type="submit" value="Like">
                 </form>
 
                 <form action="/fotos/menosvotadas" method="post">
                     <input type="text" name="id" id="" value="<%= fotos[i].id %>" hidden>
+                    <i class="fa-regular fa-thumbs-down"></i>
                     <input type="submit" value="Dislike">
                 </form>
             </div>
