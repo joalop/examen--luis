@@ -6,6 +6,40 @@
     <title>Document</title>
 </head>
 <body>
+    <section>
+        <% for(let i=0; i < fotos.length; i++){ %>
     
+            <div class="card">
+                <h1>Title: <%= fotos[i].titulo %> </h1>
+                <img src="<%= fotos[i].url %>" alt="">
+                <p class=".parra" >Publicated: <%= fotos[i].fecha %> </p>
+                <p class=".parra" ><%= fotos[i].descripcion %></p>
+    
+                <div class="linea">
+                    <form action="/fotos/masvotadas" method="post">
+                        <input type="text" name="id" id="" value="<%= fotos[i].id %>" hidden>
+                        <input type="submit" value="Like">
+                    </form>
+    
+                    <form action="/fotos/menosvotadas" method="post">
+                        <input type="text" name="id" id="" value="<%= fotos[i].id %>" hidden>
+                        <input type="submit" value="Dislike">
+                    </form>
+                </div>
+    
+                <div class="linea">
+                    <form action="/edit" method="post">
+                        <input type="text" name="id" id="" value="<%= fotos[i].id %>" hidden>
+                        <input type="submit" value="Editar">
+                    </form>
+    
+                    <form action="/delete" method="post">
+                        <input type="text" name="id" id="" value="<%= fotos[i].id %>" hidden>
+                        <input type="submit" value="Eliminar">
+                    </form>
+                </div>
+            </div>
+        <% } %>
+        </section>
 </body>
 </html>

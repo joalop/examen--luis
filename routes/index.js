@@ -112,9 +112,19 @@ router.post('/fotos/masvotadas', async (req, res, next) => {
 })
 
 // get dislike
-router.get('/fotos/menosvotadas', (req, res, next) => {
+router.get('/fotos/menosvotadas', async (req, res, next) => {
+
+  const [ rows ] = await pool.query('select titulo, descripcion, url, fecha, max(megusta), nomegusta from foto');
+
+  fotos = rows
+
+  console.log(fotos)
+
+  res.render('fotoslike', { fotos });
+
 
   res.render('fotosdislike', {  });
+
 })
 
 // post dislike
