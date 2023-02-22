@@ -1,0 +1,20 @@
+<%- include('partials/nav')  %>
+
+    <form action="/edit/profile" method="post">
+        <% for(let i=0; i < rows.length; i++){ %>
+            <div>
+                <label for="">Titulo</label>
+                <input type="text" name="title" id="" value="<%= rows[i].titulo %>">
+
+                <label for="">URL</label>
+                <input type="text" name="url" id="" value="<%= rows[i].url %>">
+
+                <label for="">Description</label>
+                <input type="text" name="description" id="" value="<%= rows[i].descripcion %>">
+
+                <input type="text" name="id" id="" value="<%= rows[i].id %>">
+                <input type="submit" value="Editar">
+        <% } %>
+    </form>
+</body>
+</html>
